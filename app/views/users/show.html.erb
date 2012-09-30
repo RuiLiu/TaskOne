@@ -1,0 +1,18 @@
+<% if signed_in? %>
+    <div class="row">
+      <aside class="span4">
+        <section>
+          <%= render 'shared/user_info' %>
+        </section>
+        <% if @user == current_user %>
+        <section>
+          <%= render 'shared/bookmark_form' %>
+        </section>
+        <% end %>
+      </aside>
+      <div class="span8">
+        <h3>BookMarks</h3>
+        <span id="Ajax"> <%= render 'shared/feed' %> </span>
+      </div>
+    </div>
+<% end %>

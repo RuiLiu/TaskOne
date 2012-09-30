@@ -1,0 +1,8 @@
+<a href="<%= user_path(current_user) %>">
+</a>
+<h1>
+  <%= @user.name %>
+</h1>
+<span>
+  <%= pluralize(@user.bookmarks.count, "bookmarks") %>
+</span>

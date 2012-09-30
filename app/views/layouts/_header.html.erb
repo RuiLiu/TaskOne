@@ -1,0 +1,15 @@
+<header class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <nav>
+        <ul class="nav pull-right">
+          <% if signed_in? %>
+            <li> <%= link_to "Profile", user_path(current_user)%>
+            <li> <%= link_to "All users", '/users'%>
+            <li> <%= link_to "Sign out", signout_path, method: "delete" %> </li>
+          <% end %>
+         </ul>
+      </nav>
+    </div>
+  </div>
+</header>

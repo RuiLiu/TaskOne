@@ -1,0 +1,11 @@
+<%= form_for(@bookmark,remote: true) do |f|%>
+  <%= render 'shared/error_messages', object: f.object%>
+    <div class="field">
+     <span id="url_label"> <%=f.label :content,"URL:" %> </span>
+     <%= render 'shared/error_messages',object: f.object %>
+     <textarea id="bookmark_content" rows=5 name="bookmark[content]" cols=3></textarea>
+     <%= f.label :comment, "comment:" %>
+     <textarea id="bookmark_comment" rows=5 name="bookmark[comment]" cols=4></textarea>
+    </div>
+    <%= f.submit "Add bookmark", method: "post", class: "btn btn-large btn-primary" %>
+<% end %>

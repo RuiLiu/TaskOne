@@ -1,4 +1,15 @@
 Task1App::Application.routes.draw do
+
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy, :show]
+  resources :bookmarks, only:[:create, :destroy]
+
+  root to: 'home_page#home'
+  match '/signup',  to: 'users#new'
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
+  match '/bookdelete',to:'bookmarks#destroy',via: :delete
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
